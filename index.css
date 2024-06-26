@@ -1,0 +1,281 @@
+body{
+    font-family: "Poppins", sans-serif;
+}
+.container{
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    justify-content: center;
+    /* align-items: space-between; */
+    flex-direction: column;
+}
+footer{
+    align-self: center;
+    padding: 64px 0;
+}
+.white{
+    color: white;
+}
+.project{
+    /* width: 300px; */
+    position: relative;
+}
+
+.project img{
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.project .overlay{
+     position: absolute;
+     top: 0;
+     left: 0;
+     text-transform: uppercase;
+     font-weight: bold;
+     font-size: 2rem;
+     letter-spacing: 2px;
+     width: 100%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin: 0;
+     background-color: rgba(255,255,255,0.1);
+     opacity: 0;
+     transition: all .2s ease-in;
+}
+
+.project .overlay:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.project-grid{
+    display: grid;
+    grid-template-areas:
+    "eth eth alphabet"
+    "eth eth traveler"
+    "cube astro traveler"
+    "cup insta insta"
+    "cup insta insta"
+    "foam foam dimensional"
+    "foam foam dimensional";
+    grid-gap: 16px;
+}
+#eth{
+    grid-area: eth;
+}
+#alphabet{
+    grid-area: alphabet;
+}
+#traveler{
+    grid-area: traveler;
+}
+#cube{
+    grid-area: cube;
+}
+#astro{
+    grid-area: astro;
+}
+#cup{
+    grid-area: cup;
+}
+#insta{
+    grid-area: insta;
+}
+#foam{
+    grid-area: foam;
+}
+#dimensional{
+    grid-area: dimensional;
+}
+.navber{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 64px 0;
+    position: relative;
+}
+.navber .right img{
+    height: 24px;
+}
+
+.navber .left{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+.navber .left h1{
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+}
+.navber .right{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* gap: 30px; */
+    width: 400px;
+}
+.navber .right a{
+    text-decoration: none;
+    color: black;
+}
+.navber .right a:hover{
+    text-decoration: underline;
+}
+.navber .hamburger{
+    height: 24px;
+    width: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    display: none;
+    z-index: 4;
+}
+.navber .hamburger:hover{
+    cursor: pointer;
+}
+.navber .bar1, .bar2, .bar3{
+    background-color: black;
+    height: 4px;
+    width: 36px;
+    border-radius: 10px;
+}
+.mobileNav{
+    width: 80px;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 3;
+    top:0;
+    right:0;
+    gap: 20px;
+    display: none;
+    transition: all .3s ease-in-out;
+}
+.mobileNav img{
+    height: 30px;
+}
+.mobileNav a{
+    text-decoration: none;
+    color: black;
+}
+.mobileNav a:hover{
+    text-decoration: underline;
+}
+@media only Screen and (max-width: 1100px){
+    .container{
+        max-width: 100%;
+    }
+    .navber{
+        padding: 32px 0;
+    }
+    .navber .right{
+        width: 320px;
+    }
+    .project-grid{
+        grid-template-areas:
+        "eth eth "
+        "alphabet traveler"
+        "cube astro"
+        "insta insta"
+        "cup foam"
+        "dimensional dimensional"
+    }
+    footer{
+        padding: 32px;
+    }
+
+}
+@media only Screen and (max-width: 768px){
+    .container{
+        padding: 0 8px;
+    }
+    .navber{
+        padding: 16px 0;
+        position: sticky;
+        top:0;
+        background-color: white;
+        z-index: 1;
+    }
+    .project-grid{
+        grid-template-areas:
+        "eth eth "
+        "alphabet alphabet"
+        "traveler traveler"
+        "cube astro"
+        "insta insta"
+        "cup cup"
+        "foam foam"
+        "dimensional dimensional";
+        column-gap: 0;
+        row-gap: 8px;
+    }
+    .project .overlay{
+        font-size: 24px;
+    }
+    .navber .right{
+        display: none;
+    }
+    .navber .hamburger{
+        display: flex;
+    }
+    footer{
+        padding: 16px;
+    }
+    .mobileNav{
+        display: flex;
+    }
+}
+.amimatbar1:nth-child(1){
+    animation: rotatebar1 .5s;
+    animation-fill-mode: forwards;
+    
+}
+.amimatbar2:nth-child(2){
+    animation: middleber .5s;
+    animation-fill-mode: forwards;
+}
+.amimatbar3:nth-child(3){
+    animation: rotatebar2 .5s;
+    animation-fill-mode: forwards;
+}
+.openDower{
+    transform: translateX(100px);
+}
+@keyframes middleber {
+    from{
+        transform: scaleX(1);
+        opacity: 1;
+    }
+    to{
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+@keyframes rotatebar1 {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(45deg) translate(4px, 10px);
+    }
+}
+@keyframes rotatebar2 {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(-45deg) translate(4px, -10px);
+    }
+}
+
+
